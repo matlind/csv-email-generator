@@ -31,7 +31,7 @@ axios.get("https://api.punkapi.com/v2/beers", {}).then(function (response) {
     fs.writeFileSync(fileName, csv);
 
     cron.schedule(
-      " * * * * * * ",
+      " * 9 * * * * ",
       () => {
         console.log("Price updater email sent to Zava DE/Cs ");
         sendMail(fileName);
