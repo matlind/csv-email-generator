@@ -4,14 +4,14 @@ const nodemailer = require("nodemailer");
 var transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user: process.env.EMAIL_ADRESS,
+    user: process.env.EMAIL_ADDRESS,
     pass: process.env.EMAIL_PASSWORD,
   },
 });
 
 function mailOptionsFactory(fileName) {
   return {
-    from: process.env.EMAIL_ADRESS,
+    from: process.env.EMAIL_ADDRESS,
     to: process.env.EMAIL_RECIPIENT,
     subject: "test mail",
     html: "<h1>This is a test mail.</h1>",
